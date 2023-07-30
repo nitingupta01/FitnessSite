@@ -1,0 +1,39 @@
+.process-container{
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 50px 20px;
+}
+
+@media screen and (max-width: 861px){
+    .process-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 410px){
+    .process-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.box{
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+.box i{
+    font-size: 100px;
+    color: #022140;
+    margin-bottom: 20px;
+}
+
+.box h5{
+    margin-top: 10px;
+    text-align: center;
+}

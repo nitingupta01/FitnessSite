@@ -1,0 +1,200 @@
+.stats-box {
+    padding: 20px 10%;
+}
+
+.stat-container{
+    margin-top: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+
+.stat-info{
+    padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:20px;
+}
+
+.stat-small-box{
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);   
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20%;
+    box-shadow: 4px 4px 2px 1px rgb(64, 63, 63);
+
+}
+
+.heading{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #022140;
+}
+
+.stat-small-box h1{
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+.stat-small-box p{
+    font-size: 1.5rem;
+    color: rgb(48, 48, 48);
+}
+
+#btn{
+    float: right;
+}
+
+.goals-box{
+    padding: 20px 10%;
+    margin-top: 10px;
+}
+
+.create-goal{
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.active-goals{
+    text-align: center;
+}
+
+.stat-form{
+    padding: 10px;
+}
+.stat-form input{
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+.add-button{
+    background-color: rgba(0, 0, 0, 0.819);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+.add-button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+@media(max-width: 1200px)
+{
+    .stat-info{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media(max-width: 800px)
+{
+    .stat-info{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media(max-width: 600px)
+{
+    .stat-info{
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+.create-goal-form-box{
+    padding: 10px 10px;
+}
+
+.create-goal-form-box form{
+    margin: 5px 30px;
+    border: 1px solid rgb(114, 110, 110);
+    padding: 40px;
+    border-radius: 5px;
+    background-image: url("https://st.depositphotos.com/1202020/4830/i/450/depositphotos_48304047-stock-photo-achieve-business-goals.jpg");
+}
+
+.create-goal-form-box input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    opacity: 30%;
+}
+
+.create-goal-form-box button{
+    padding: 5px 40px;
+    font-size: 1.5rem;
+    background-color: rgba(47, 170, 192, 0.753);
+    color: white;
+    opacity: 30%;
+    border-radius: 20px;
+}
+
+.create-goal-form-box button:hover{
+    color:black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#target{
+    display: none;
+}
+
+.active-goals h3{
+    margin: 10px;
+}
+
+.active-goals table{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.2rem;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.active-goals table th{
+    padding: 30px;
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);   
+    font-family:cursive;
+    border-radius: 50%;
+    box-shadow: 4px 4px 2px 1px rgb(64, 63, 63);
+}
+
+.active-goals table tr{
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.active-goals table td{
+    padding: 10px;
+    font-family:cursive;
+
+}
+.active-goals table tr:hover:not(:first-child){
+    color: rgb(47, 149, 208);
+}
+
+.active-goals table i:hover{
+    color: red;
+    cursor:pointer;
+}
+
+@media(max-width:780px){
+    .active-goals table{
+        font-size: 1rem;
+        border-spacing: 5px;
+    }
+
+    .active-goals table th{
+        padding: 20px 10px;
+    }
+    
+}

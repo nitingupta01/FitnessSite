@@ -1,0 +1,9 @@
+.add-prod-form{
+    padding: 10px;
+}
+.add-prod-form input{
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}

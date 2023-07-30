@@ -1,0 +1,32 @@
+.footer{
+    background-color: #022140;
+    padding: 40px;
+}
+.footer-big-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-small-box{
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-small-box i{
+    margin-right: 10px;
+}
+
+.footer-small-box p{
+    margin: 0;
+}
+
+.footer-second-box{
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.footer-second-box p{
+    margin: 0;
+}

@@ -1,0 +1,38 @@
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart-container{
+    padding: 0px 10%;
+}
+
+.cart-container h2{
+    padding: 3% 0px;
+}
+
+tr{
+    width: 100%;
+    text-align: center;
+}
+
+tr:first-child{
+    border-bottom: 1px solid black;
+}
+
+td , th{
+    padding: 20px 5px;
+}
+
+.total{
+    margin-top: 10px;
+}
+tr img{
+    width: 100px;
+    height: 50px;
+}
+tr{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}

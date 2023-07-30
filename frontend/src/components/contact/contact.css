@@ -1,0 +1,77 @@
+
+.about-box{
+    margin: 7% 20px;
+}
+.main-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(247, 248, 248);
+}
+.first-box{
+    padding: 5%;
+    text-align: justify;
+}
+.first-box h1{
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    color: #022140;
+}
+
+
+.first-box form input , .first-box form label , .first-box form textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+.first-box form input , .first-box form textarea{
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    box-shadow: 1px 1px 2px 2px black;
+}
+form button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #022140;
+    color: white;
+    border-radius: 5px;
+}
+
+form button:hover{
+    background-color: white;
+    color: black;
+}
+.second-box{
+    height: 500px;
+}
+.second-box img{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+@media (max-width:1400px){
+    .first-box p{
+        font-size: 18px;
+    }
+}
+
+@media(max-width:1120px){
+    .first-box p{
+        font-size: 16px;
+    }
+}
+@media (max-width:875px){
+    .first-box p{
+        line-height: 1.5;
+    }
+}
+@media (max-width:715px)
+{
+    .second-box{
+        display: none;
+    }
+    .main-box{
+        display: block;
+    }
+}

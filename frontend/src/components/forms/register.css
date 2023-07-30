@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.form-section{
+    text-align: center;
+    padding: 30px 10%;
+}
+.form-box{
+    display: inline-block;
+    text-align: left;
+}
+
+.form-box h1{
+    margin:10px;
+    margin-bottom: 30px;
+}
+form{
+    margin: 10px;
+}
+.form-box label{
+    width: 100%;
+}
+.form-box input{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(249, 247, 247);
+    border: none;
+    border-radius: 0;
+}
+.form-box button{
+    cursor: pointer;
+    border-radius: 0;
+}
+.new{
+    margin: 10px;
+}
+.login{
+    text-decoration: none;
+    color:darkblue;
+    cursor: pointer;
+}
+.login:hover{
+    color: red;
+}
