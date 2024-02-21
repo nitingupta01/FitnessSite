@@ -2,38 +2,43 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './prod.css';
 import { useContext } from 'react';
-import { AdminContext, CartContext } from '../../context';
+import { AdminContext} from '../../context';
 import {URL} from '../../constant/const';
 
 
 function Prod(props) {
-  // const {cart,setCart}=useContext(CartContext);
   const  {isAdmin} = useContext(AdminContext);
   const setProducts = props.setProducts;
 
   async function handleAdd(){
-    // const obj={id:props.id,name:props.name,type:props.type,price:props.price};
-    // setCart([...cart,obj]);
 
-    await fetch(`${URL}/cart` , {
+    await fetch(`${URL}/cart/add` , {
       method:'POST',
       body: JSON.stringify({product_id:props.id,name:props.name,count:1,type:props.type,price:props.price}),
       headers:{'Content-Type':'application/json'},
       credentials:'include',
-    });
+    }).then({}).catch(err=>{console.log(err)});
   }
 
   async function deleteProduct(){
-      const response = await fetch(`${URL}/deleteproduct`,{
-        method:'POST',
-        body: JSON.stringify({deleteid:props.id}),
-        headers:{'Content-Type':'application/json'},
-      });
-      if(response.status===200){
-        response.json().then(products=>{
-          setProducts(products);
-        })
+      try{
+        const response = await fetch(`${URL}/products/delete`,{
+          method:'POST',
+          body: JSON.stringify({deleteid:props.id}),
+          headers:{'Content-Type':'application/json'},
+        });
+        if(response.status===200){
+          response.json().then(products=>{
+            setProducts(products);
+          })
+        }
+        else
+          alert('Error');
       }
+      catch(err){
+        alert('Error');
+      }
+      
   }
   return (
   <>

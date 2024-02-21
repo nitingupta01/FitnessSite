@@ -15,24 +15,29 @@ function RegisterForm(){
     async function register(e){
         e.preventDefault();
         if(password===cpassword){
-            console.log(name);
-            const response = await fetch(`${URL}/register` , {
-                method:'POST',
-                body: JSON.stringify({name,dob,contact,email,password}),
-                headers:{'Content-Type':'application/json'},
-            });
-            if(response.status===200){
-                alert('Registeration Sucessful');
-                setRedirect(true);
-                setName("");
-                setEmail("");
-                setPassword("");
-                setCpassword("");
-                setContact();
-                setDob();
+            // console.log(name);
+            try{
+                const response = await fetch(`${URL}/users/register` , {
+                    method:'POST',
+                    body: JSON.stringify({name,dob,contact,email,password}),
+                    headers:{'Content-Type':'application/json'},
+                });
+                if(response.status===200){
+                    alert('Registeration Sucessful');
+                    setRedirect(true);
+                    setName("");
+                    setEmail("");
+                    setPassword("");
+                    setCpassword("");
+                    setContact();
+                    setDob();
+                }
+                else
+                    alert('Registeration Failed');
             }
-            else
+            catch(err){
                 alert('Registeration Failed');
+            }
         }
         else
             alert('WRONG CREDENTIALS');

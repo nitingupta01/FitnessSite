@@ -6,7 +6,9 @@ function ProductPage(){
     return(
         <>
             <Header/>
+            <body>
             <ProductSection/>
+            </body>
             <Footer/>
         </>
     )

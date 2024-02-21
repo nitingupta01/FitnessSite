@@ -21,29 +21,39 @@ function Goalsection(){
     useEffect(()=>{
         setIsLoading(true);
 
-        fetch(`${URL}/getgoals`,{credentials:'include'}).then(response=>{
+        fetch(`${URL}/goals`,{credentials:'include'}).then(response=>{
             response.json().then(goals=>{
                 setGoals(goals);
                 setIsLoading(false);
-
+            }).catch(err=>{console.log(err)
+                setIsLoading(false);
             });
+        }).catch(err=>{console.log(err)
+            setIsLoading(false);
         });
     },[]);
 
     async function addGoal(e){
         e.preventDefault();
         
-        const response  = await fetch(`${URL}/goals` , {
-            method:'POST',
-            body:JSON.stringify({goalName,goalDuration,goalDistance}),
-            headers:{'Content-Type':'application/json'},
-            credentials:'include',
-        });
-        if(response.status==200){
-            response.json().then(goals=>{setGoals(goals)});
-            setGoalName("");
-            setGoalDistance();
-            setGoalDuration();
+        try{
+            const response  = await fetch(`${URL}/goals/new` , {
+                method:'POST',
+                body:JSON.stringify({goalName,goalDuration,goalDistance}),
+                headers:{'Content-Type':'application/json'},
+                credentials:'include',
+            });
+            if(response.status==200){
+                response.json().then(goals=>{setGoals(goals)});
+                setGoalName("");
+                setGoalDistance();
+                setGoalDuration();
+            }
+            else
+                alert('Error');
+        }
+        catch(err){
+            alert('Error');
         }
     }
 
@@ -83,14 +93,25 @@ function Goalsection(){
                     <table>
                     <tr>
                         <th>GOAL</th>
-                        <th>DURATION</th>
-                        <th>DISTANCE</th>
+                        <th>DURATION (in mns)</th>
+                        <th>DISTANCE (in km s)</th>
                         <th>DELETE</th>
                     </tr>
-                        {isLoading && <TailSpin/>}
                         {goals?.map(CreateTable)}
                     </table>
-                    {goals.length===0 && <div style={{color:"red" , margin:"10px auto" , fontSize:"1.2rem" , fontWeight:"bold"}}>NO ACTIVE GOALS</div>}
+                    {isLoading && <div style={{display:"flex"}}>
+                        <TailSpin
+                            height="100"
+                            width="100"
+                            color="#800000"
+                            ariaLabel="tail-spin-loading"
+                            radius="1"
+                            wrapperStyle={{margin:"auto"}}
+                            wrapperClass=""
+                            visible={true}
+                        />
+                    </div>}
+                    {goals.length===0 && !isLoading && <div style={{color:"red" , margin:"10px auto" , fontSize:"1.2rem" , fontWeight:"bold"}}>NO ACTIVE GOALS</div>}
                 </div>
             </Container>
         </>

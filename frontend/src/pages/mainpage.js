@@ -9,10 +9,12 @@ function Mainpage(){
     return(
         <>
             <Header/>
+            <body style={{minHeight:"70vh"}}>
             <Banner/>
             <Process/>
             <Hero/>
             <BlogSection/>
+            </body>
             <Footer/>
         </>
     )

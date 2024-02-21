@@ -14,8 +14,10 @@ function DashboardPage(){
     return(
         <>
             <Header/>
+            <body style={{minHeight:"70vh"}}>
             <Stats/>
             <Goalsection/>
+            </body>
             <Footer/>
         </>
     )

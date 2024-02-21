@@ -1,22 +1,19 @@
-// import { useContext } from "react";
-// import { CartContext } from "../../context";
 import { Container } from "react-bootstrap";
 import CartItem from "./cartitem";
 import { useState ,useEffect, useContext } from "react";
 import './cartsect.css';
 import {URL} from '../../constant/const';
-import { LogContext } from "../../context";
 
 
 function CartSection(){
     const [cart,setCart] = useState([]);
 
     useEffect(()=>{
-        fetch(`${URL}/getcart`,{credentials:'include'}).then(
+        fetch(`${URL}/cart`,{credentials:'include'}).then(
             response=>{
                 response.json().then(cart=>{setCart(cart)
-                });
-        });
+                }).catch(err=>{console.log(err)});
+        }).then(err=>console.log(err));
     },[]);
 
 

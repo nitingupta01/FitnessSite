@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import Footer from "../components/footer/footer";
 import Header from "../components/navbar/navbar";
 import QueryTable from "../components/querytable/querytable";
@@ -14,7 +14,9 @@ function QueriesPage(){
     return(
         <>
             <Header/>
+            <body style={{minHeight:"70vh"}}>
             <QueryTable/>
+            </body>
             <Footer/>
         </>
     )

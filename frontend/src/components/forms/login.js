@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import "./login.css";
 import {Link, Navigate} from "react-router-dom";
 import {URL} from '../../constant/const';
-import { AdminContext, LogContext, UserContext } from "../../context";
 
 function LoginForm(){
     // const {setUser} = useContext(UserContext);
@@ -15,7 +14,7 @@ function LoginForm(){
     async function login(e){
         e.preventDefault();
         try{
-            const response = await fetch(`${URL}/login` , {
+            const response = await fetch(`${URL}/users/login` , {
             method:'POST',
             body: JSON.stringify({email,password}),
             headers:{'Content-Type':'application/json'},

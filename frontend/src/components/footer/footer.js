@@ -7,25 +7,17 @@ function Footer(){
             <Container>
                 <div className="footer-big-box">
                     <div className="footer-small-box">
-                        <h4><i class="fa-sharp fa-regular fa-heart"></i>Diet</h4>
-                        <p>CopyRight</p>
-                        <p>Content write</p>
-                        <p>Webiste</p>
+                        <h5><i class="fa-sharp fa-regular fa-heart"></i>Diet</h5>
                     </div>
                     <div className="footer-small-box">
-                        <h4><i class="fa-solid fa-dumbbell"></i>Weight Training</h4>
-                        <p>Terms and Conditions</p>
-                        <p>Privacy Policy</p>
+                        <h5><i class="fa-solid fa-dumbbell"></i>Training</h5>
                     </div>
                     <div className="footer-small-box">
-                        <h4><i class="fa-solid fa-person-walking"></i>Exercises</h4>
-                        <p>Blog</p>
-                        <p>About</p>
-                        <p>contact</p>
+                        <h5><i class="fa-solid fa-person-walking"></i>Exercises</h5>
                     </div>
                 </div>
                 <div className="footer-second-box">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Made By Nitin</p>
                     <p>COPYRIGHT @ 2023</p>
                 </div>
             </Container>

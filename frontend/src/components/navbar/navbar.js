@@ -15,12 +15,13 @@ function Header() {
   const {setIsLogin} = useContext(LogContext);
 
   useEffect(()=>{
-    fetch(`${URL}/profile`,{credentials:'include'}).then(response=>{
+    fetch(`${URL}/users/profile`,{credentials:'include'}).then(response=>{
       console.log(response);
       response.json().then(info=>{
-        setUser(info.name);
+        setUser(info.name); 
         setisAdmin(info.isAdmin);
         setIsLogin(true);
+        
       }).catch(err=>{console.log(err)})
     }).catch(err=>{
       console.log(err);
@@ -28,13 +29,15 @@ function Header() {
   },[]);
 
   function logout(){
-    fetch(`${URL}/logout`,{
+    fetch(`${URL}/users/logout`,{
       method:'POST',
       credentials:'include',
-    })
-    setUser(null);
-    setisAdmin(false);
-    setIsLogin(false);
+    }).then(()=>{
+      setUser(null);
+      setisAdmin(false);
+      setIsLogin(false);
+    }
+    ).catch(err=>{});
   }
 
   return (
@@ -52,6 +55,7 @@ function Header() {
               {user && <NavDropdown.Item><Link style={{textDecoration:"none",color:"inherit"}} to={'/dashboard'}>DashBoard</Link></NavDropdown.Item>}
               {!isAdmin && <NavDropdown.Item><Link style={{textDecoration:"none",color:"inherit"}} to={'/contact'}>Contact Us</Link></NavDropdown.Item>}
               {isAdmin && <NavDropdown.Item><Link style={{textDecoration:"none",color:"inherit"}} to={'/queries'}>Queries</Link></NavDropdown.Item>}
+              {/* {isAdmin && <NavDropdown.Item><Link style={{textDecoration:"none",color:"inherit"}} to={'/users'}>Users</Link></NavDropdown.Item>} */}
               {user && <NavDropdown.Item><Link style={{textDecoration:"none",color:"inherit"}} onClick={logout}>Log Out</Link></NavDropdown.Item>}
             </NavDropdown>
             {user && !isAdmin && <Nav.Link className="nav-lin"><Link to='/cart' style={{textDecoration:"none",color:"inherit"}}><i class="fa-solid fa-cart-shopping"></i></Link></Nav.Link>}

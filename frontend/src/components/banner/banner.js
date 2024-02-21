@@ -1,57 +1,22 @@
-import { Container } from "react-bootstrap";
-import ProductCard from "../productcard/productcard";
 import './banner.css';
-import { useState ,useEffect } from "react";
-import {TailSpin} from "react-loader-spinner";
-import {URL} from '../../constant/const';
+import {Button} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Banner(){
-    const [bannerproducts , setBannerproducts] = useState();
-    const [isLoading,setIsLoading]=useState(false);
-    const [error,setError]=useState(null);
-
-    useEffect(()=>{
-        setIsLoading(true);
-        fetch(`${URL}/banner`).then(response=>{
-            response.json().then(bannerproducts=>{
-                setBannerproducts(bannerproducts);
-                setIsLoading(false);
-                setError(null);
-            })
-            .catch(err=>{
-                setError(err);
-                setIsLoading(false);
-            })
-        }).catch(err=>{
-            setError(err)
-            setIsLoading(false);
-        });
-    },[])
-    function CreateCard(product){
-        return(
-            <ProductCard
-                name={product.prodname}
-                image={product.prodimage}
-            />
-        )
-    }
     return(
-    <div className="big-contain">
-        <Container className="containee">
-            {isLoading && <TailSpin
-                height="80"
-                width="80"
-                color="#800000"
-                ariaLabel="tail-spin-loading"
-                radius="1"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-            />}
-            {error && <div style={{color:"white"}}>Server Error</div>}
-            {bannerproducts?.map(CreateCard)}
+        <>
+        <Container className='banner-container'>
+            <div className='banner-container-content'>
+                <div>
+                <h1>LEARN FROM THE EXPERTS</h1>
+                <p>FIND VALUABLE CONTENT AT LOW COST</p>
+                <Link to="/products"><Button variant="success">EXPLORE NOW</Button></Link>
+                </div>
+            </div>
+            <div className='banner-container-image'><img className="moveArrow" width={"100%"} src="https://st3.depositphotos.com/13264288/36832/v/450/depositphotos_368326416-stock-illustration-cartoon-boy-weightlifter-character-sport.jpg"></img></div>
         </Container>
-    </div>
+        </>
     )
 }
 

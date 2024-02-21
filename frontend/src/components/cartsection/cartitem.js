@@ -7,17 +7,22 @@ function CartItem(props){
     const setCart=props.setCart;
 
     async function handleDelete(){
-        const response = await fetch(`${URL}/deleteitem` , {
-            method:'POST',
-            body:JSON.stringify({deleteid:props.product_id}),
-            headers:{'Content-Type':'application/json'},
-            credentials:'include',
-        })
-        console.log(response);
-        if(response.status===200){
-            response.json().then(cart=>{
-                console.log(cart);
-                setCart(cart)});
+        try{
+            const response = await fetch(`${URL}/cart/remove` , {
+                method:'POST',
+                body:JSON.stringify({deleteid:props.product_id}),
+                headers:{'Content-Type':'application/json'},
+                credentials:'include',
+            })
+            console.log(response);
+            if(response.status===200){
+                response.json().then(cart=>{
+                    console.log(cart);
+                    setCart(cart)});
+            }
+        }
+        catch(err){
+            console.log(err);
         }
     }
 

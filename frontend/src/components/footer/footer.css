@@ -1,6 +1,8 @@
 .footer{
+    width: 100%;
     background-color: #022140;
     padding: 40px;
+    bottom: 0;
 }
 .footer-big-box{
     display: grid;
@@ -29,4 +31,11 @@
 
 .footer-second-box p{
     margin: 0;
+}
+
+@media screen and (max-width: 470px){
+    .footer-big-box{
+        grid-template-columns: 1fr;
+    }
+    
 }

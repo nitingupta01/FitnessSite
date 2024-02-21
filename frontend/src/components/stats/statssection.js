@@ -26,7 +26,9 @@ function Stats(){
                     setWorkout(obj.workout);
                 }
             )}
-        );
+        ).catch(e=>{
+            alert('Error');
+        })
     },[]);
 
     const [key1 , setKey1] = useState(0);
@@ -53,8 +55,8 @@ function Stats(){
             body: JSON.stringify({distance,calories,duration,workout}),
             headers:{'Content-Type':'application/json'},
             credentials:'include',
-        })
-    },[distance])
+        }).catch(err=>{})
+    },[workout]);
 
     
     return(
